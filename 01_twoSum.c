@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int* twoSum(int* nums, int numsSize, int target, int* returnSize);
+int* twoSumBruteForce(int* nums, int numsSize, int target, int* returnSize);
 
 int main () {
     int sum[] = {5, 8, 21, 45, 89};
     int rs = 0, target = 66;
-    int *p = twoSum(sum, sizeof(sum)/sizeof(sum[0]), target, &rs);
+    int *p = twoSumBruteForce(sum, sizeof(sum)/sizeof(sum[0]), target, &rs);
 
     if (rs) {
         printf("Target found at p[%d] : %d and p[%d] : %d", p[0],sum[p[0]], p[1], sum[p[1]]);
@@ -21,7 +21,7 @@ int main () {
  * Note: The returned array must be malloced, assume caller calls free().
  */
 
-int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
+int* twoSumBruteForce(int* nums, int numsSize, int target, int* returnSize) {
     /* int *rs_arr = malloc( sizeof(int) * 2); */
     int i, j;
 
