@@ -54,7 +54,7 @@ int main () {
 /*                         rs_arr[0] = i; */
 /*                         rs_arr[1] = j; */
 /*                         *returnSize = 2; */
-/**/
+/***/
 /*                         return rs_arr; */
 /*                     } */
 /**/
@@ -62,5 +62,33 @@ int main () {
 /*             } */
 /*         } */
 /*     } */
+/*     returnSize = 0;
+ *     return NULL; */
 /* } */
 
+// Beats 35.17% && 103 runtimes
+/* int* twoSumBruteForce(int* nums, int numsSize, int target, int* returnSize) { */
+/*      /* int *rs_arr = malloc( sizeof(int) * 2); */ 
+/*      int i, j; */
+/**/
+/*      if (nums == NULL || numsSize < 2) {  */
+/*          *returnSize = 0;  */
+/*          return NULL;  */
+/*      }  */
+/**/
+/*      for (i = 0; i < numsSize - 1; i++) {  */
+/*          for (int j = i + 1; j < numsSize; j++) {  */
+/*                      if (nums[i] + nums[j] == target) {  */
+/*                          int *rs_arr = (int *) malloc ( sizeof(int) * 2);  */
+/*                          rs_arr[0] = i;  */
+/*                          rs_arr[1] = j;  */
+/*                          *returnSize = 2;  */
+/**/
+/*                          return rs_arr;  */
+/*                      }  */
+/*          }  */
+/*      }  */
+/**/
+/*     returnSize = 0; */
+/*     return NULL; */
+/*  }  */
