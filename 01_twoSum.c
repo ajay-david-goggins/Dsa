@@ -21,42 +21,46 @@ int main () {
  * Note: The returned array must be malloced, assume caller calls free().
  */
 
-int* twoSumBruteForce(int* nums, int numsSize, int target, int* returnSize) {
-    /* int *rs_arr = malloc( sizeof(int) * 2); */
-    int i, j;
+// Beats 5.16% && Runtime 172 ms only
 
-    if (nums == NULL || numsSize < 2) {
-        return NULL;
-    }
 
-    for (i = 0; i < numsSize - 1; i++) {
-        for (int j = i + 1; j < numsSize; j++) {
-            if (target & 1) { // if target is odd answer maybe even, odd or odd, even 
-                if (((nums[i] & 1) && !(nums[j] & 1)) || (!(nums[i] &1) && (nums[j]&1))) { // only allow different combination(odd, even)
-                    if (nums[i] + nums[j] == target) {
-                        int *rs_arr = (int *) malloc ( sizeof(int) * 2);
-                        rs_arr[0] = i;
-                        rs_arr[1] = j;
-                        *returnSize = 2;
-
-                        return rs_arr;
-                    }
-
-                }
-            } else { // else target is defenitely
-                if (((nums[i] & 1) && (nums[j] & 1)) || (!(nums[i] &1) && !(nums[j]&1))) { // only allow same combination(odd, even)
-                    if (nums[i] + nums[j] == target) {
-                        int *rs_arr = (int *) malloc ( sizeof(int) * 2);
-                        rs_arr[0] = i;
-                        rs_arr[1] = j;
-                        *returnSize = 2;
-
-                        return rs_arr;
-                    }
-
-                }
-            }
-        }
-    }
-}
+/* int* twoSumBruteForce(int* nums, int numsSize, int target, int* returnSize) { */
+/*     /* int *rs_arr = malloc( sizeof(int) * 2); */ 
+/*     int i, j; */
+/**/
+/*     if (nums == NULL || numsSize < 2) { */
+/*         *returnSize = 0; */
+/*         return NULL; */
+/*     } */
+/**/
+/*     for (i = 0; i < numsSize - 1; i++) { */
+/*         for (int j = i + 1; j < numsSize; j++) { */
+/*             if (target & 1) { // if target is odd answer maybe even, odd or odd, even  */
+/*                 if (((nums[i] & 1) && !(nums[j] & 1)) || (!(nums[i] &1) && (nums[j]&1))) { // only allow different combination(odd, even) */
+/*                     if (nums[i] + nums[j] == target) { */
+/*                         int *rs_arr = (int *) malloc ( sizeof(int) * 2); */
+/*                         rs_arr[0] = i; */
+/*                         rs_arr[1] = j; */
+/*                         *returnSize = 2; */
+/**/
+/*                         return rs_arr; */
+/*                     } */
+/**/
+/*                 } */
+/*             } else { // else target is defenitely */
+/*                 if (((nums[i] & 1) && (nums[j] & 1)) || (!(nums[i] &1) && !(nums[j]&1))) { // only allow same combination(odd, even) */
+/*                     if (nums[i] + nums[j] == target) { */
+/*                         int *rs_arr = (int *) malloc ( sizeof(int) * 2); */
+/*                         rs_arr[0] = i; */
+/*                         rs_arr[1] = j; */
+/*                         *returnSize = 2; */
+/**/
+/*                         return rs_arr; */
+/*                     } */
+/**/
+/*                 } */
+/*             } */
+/*         } */
+/*     } */
+/* } */
 
